@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bluefit Portal do Morumbi · Manual de Venda · Estúdio Bruno Tomé</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #0033A0;
+    --blue-deep: #001F66;
+    --blue-bright: #2952D9;
+    --ink: #0A0E1A;
+    --paper: #FAFAF7;
+    --cream: #F2F0E8;
+    --red: #B91C1C;
+    --green: #047857;
+    --line: rgba(10,14,26,0.12);
+    --muted: rgba(10,14,26,0.62);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter Tight', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.5;
+    font-feature-settings: "ss01", "ss02";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+  @media (max-width: 720px) { .container { padding: 0 24px; } }
+
+  /* ============ MENU ============ */
+  .menu {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--line);
+    padding: 16px 0;
+    background: rgba(250,250,247,0.95);
+    backdrop-filter: blur(12px);
+  }
+  .menu-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .menu-mark {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
+    font-size: 14px;
+    color: var(--blue);
+  }
+  .menu-mark .ital {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+  }
+  .menu-nav { display: flex; gap: 24px; flex-wrap: wrap; }
+  .menu-nav a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .menu-nav a:hover { color: var(--blue); }
+  @media (max-width: 900px) { .menu-nav { display: none; } }
+
+  /* ============ HERO ============ */
+  .hero {
+    padding: 180px 0 100px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-tag {
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.18em;
+    font-size: 14px;
+    color: var(--blue);
+    padding: 8px 16px;
+    border: 1.5px solid var(--blue);
+    margin-bottom: 32px;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 8vw, 108px);
+    line-height: 0.94;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+  }
+  .hero h1 .blue { color: var(--blue); }
+  .hero h1 .ital {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+  }
+  .hero-lede {
+    font-size: 20px;
+    line-height: 1.5;
+    max-width: 660px;
+    margin-bottom: 40px;
+  }
+  .hero-lede strong { font-weight: 600; }
+
+  .hero-rules {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+  @media (max-width: 720px) { .hero-rules { grid-template-columns: 1fr; } }
+  .rule { border-left: 3px solid var(--blue); padding-left: 18px; }
+  .rule .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: var(--blue);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .rule .text { font-size: 15px; line-height: 1.45; font-weight: 500; }
+
+  /* ============ SECTIONS ============ */
+  section {
+    padding: 100px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-num {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.18em;
+    font-size: 15px;
+    color: var(--blue);
+    margin-bottom: 16px;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 0.98;
+    letter-spacing: -0.005em;
+    margin-bottom: 24px;
+    max-width: 16ch;
+  }
+  .section-title .ital {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+  }
+  .section-lede {
+    font-size: 18px;
+    line-height: 1.55;
+    max-width: 720px;
+    margin-bottom: 56px;
+    color: var(--ink);
+  }
+
+  .section-signature {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.15em;
+    font-size: 11px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .section-signature .ital {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--blue);
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 13px;
+  }
+
+  /* ============ PERFIS ============ */
+  .leads {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  @media (max-width: 720px) { .leads { grid-template-columns: 1fr; } }
+  .lead-card { background: var(--paper); padding: 36px 32px; }
+  .lead-card .badge {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    color: var(--blue);
+    margin-bottom: 16px;
+    display: block;
+  }
+  .lead-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    letter-spacing: 0.01em;
+    margin-bottom: 20px;
+    line-height: 1.05;
+  }
+  .lead-card .signs {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .lead-card .signs strong {
+    color: var(--ink);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .lead-card .play {
+    background: var(--ink);
+    color: white;
+    padding: 16px 18px;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 16px;
+  }
+  .lead-card .play strong {
+    color: var(--blue-bright);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* ============ COMPETE TABLE ============ */
+  .compete-table { border: 1px solid var(--line); background: white; }
+  .compete-row {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 2fr;
+    border-bottom: 1px solid var(--line);
+  }
+  .compete-row:last-child { border-bottom: none; }
+  .compete-row.head { background: var(--ink); color: white; }
+  .compete-row.us { background: rgba(0,51,160,0.06); }
+  .compete-cell {
+    padding: 22px 24px;
+    border-right: 1px solid var(--line);
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .compete-cell:last-child { border-right: none; }
+  .compete-row.head .compete-cell {
+    border-right: 1px solid rgba(255,255,255,0.18);
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.12em;
+    font-size: 14px;
+    padding: 18px 24px;
+  }
+  .compete-cell .name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+    line-height: 1.05;
+  }
+  .compete-row.us .name { color: var(--blue); }
+  @media (max-width: 720px) {
+    .compete-row { grid-template-columns: 1fr; }
+    .compete-cell { border-right: none; border-bottom: 1px dashed var(--line); }
+    .compete-cell:last-child { border-bottom: none; }
+    .compete-row.head { display: none; }
+  }
+  .table-caption {
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 760px;
+  }
+  .table-caption strong { color: var(--ink); }
+
+  /* ============ CARTAS ============ */
+  .cards-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  @media (max-width: 720px) { .cards-list { grid-template-columns: 1fr; } }
+  .card-item { background: var(--paper); padding: 36px 32px; }
+  .card-item .card-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 32px;
+    color: var(--blue);
+    margin-bottom: 14px;
+  }
+  .card-item h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+  .card-item p {
+    font-size: 15px;
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+  .card-item blockquote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink);
+    border-left: 3px solid var(--blue);
+    padding: 4px 0 4px 18px;
+    margin-top: 14px;
+  }
+
+  /* ============ ROTEIRO ============ */
+  .script {
+    border-top: 2px solid var(--ink);
+    background: white;
+  }
+  .script-step {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    border-bottom: 1px solid var(--line);
+    padding: 36px 32px;
+    align-items: start;
+    gap: 28px;
+  }
+  .script-step:last-child { border-bottom: none; }
+  @media (max-width: 720px) {
+    .script-step { grid-template-columns: 1fr; gap: 8px; padding: 28px 20px; }
+  }
+  .script-step .step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px;
+    color: var(--blue);
+    line-height: 0.9;
+  }
+  .script-step h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+    line-height: 1.1;
+  }
+  .script-step p {
+    font-size: 16px;
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+  .script-step .say {
+    background: var(--cream);
+    padding: 16px 20px;
+    border-left: 3px solid var(--blue);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .script-step .say strong {
+    font-family: 'Inter Tight', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--blue);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* ============ PROIBIDAS ============ */
+  .forbidden {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  @media (max-width: 720px) { .forbidden { grid-template-columns: 1fr; } }
+  .forbidden-col { background: var(--paper); padding: 36px 32px; }
+  .forbidden-col.bad { border-top: 4px solid var(--red); }
+  .forbidden-col.good { border-top: 4px solid var(--green); }
+  .forbidden-col h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.1em;
+    margin-bottom: 24px;
+  }
+  .forbidden-col.bad h4 { color: var(--red); }
+  .forbidden-col.good h4 { color: var(--green); }
+  .forbidden-col ul { list-style: none; }
+  .forbidden-col li {
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .forbidden-col li:first-child { border-top: none; }
+  .forbidden-col li strong {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* ============ OBJEÇÕES ============ */
+  .obj-list { border-top: 1px solid var(--line); }
+  .obj {
+    border-bottom: 1px solid var(--line);
+    padding: 36px 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 36px;
+    align-items: start;
+  }
+  @media (max-width: 720px) { .obj { grid-template-columns: 1fr; gap: 16px; } }
+  .obj .left h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+  .obj .left .quote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .obj .right h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    color: var(--green);
+    margin-bottom: 10px;
+  }
+  .obj .right .response {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .obj .right .response strong { color: var(--blue); }
+  .obj .right .why {
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+    border-top: 1px dashed var(--line);
+    padding-top: 12px;
+  }
+  .obj .right .why strong {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* ============ FOLLOW-UP ============ */
+  .followup {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  @media (max-width: 720px) { .followup { grid-template-columns: 1fr; } }
+  .fu-card { background: var(--paper); padding: 32px 28px; }
+  .fu-card .when {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    color: var(--blue);
+    margin-bottom: 10px;
+    display: block;
+  }
+  .fu-card h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 0.02em;
+    margin-bottom: 14px;
+    line-height: 1.05;
+  }
+  .fu-card .channel {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.12em;
+  }
+  .fu-card .msg {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 16px 18px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ============ FAMILIA ============ */
+  .pf-block {
+    background: var(--ink);
+    color: white;
+    padding: 64px 56px;
+    margin-top: 32px;
+  }
+  .pf-block h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+    line-height: 1.05;
+  }
+  .pf-block h3 .ital {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--blue-bright);
+  }
+  .pf-block .lede {
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 720px;
+    margin-bottom: 36px;
+    color: rgba(255,255,255,0.92);
+  }
+  .pf-block .lede strong { color: white; }
+  .pf-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+  @media (max-width: 720px) { .pf-grid { grid-template-columns: 1fr; gap: 28px; } }
+  .pf-item { border-top: 2px solid var(--blue-bright); padding-top: 18px; }
+  .pf-item h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+    color: white;
+  }
+  .pf-item p {
+    font-size: 15px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 14px;
+  }
+  .pf-item .say {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: rgba(255,255,255,0.95);
+    border-left: 2px solid var(--blue-bright);
+    padding-left: 16px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  /* ============ EXPERIMENTAL ============ */
+  .exp-block {
+    background: var(--cream);
+    padding: 48px 44px;
+    border-left: 4px solid var(--blue);
+    margin-top: 48px;
+  }
+  .exp-block h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+    line-height: 1.05;
+    color: var(--blue);
+  }
+  .exp-block p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .exp-block p strong { color: var(--blue); }
+  .exp-rules {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+  }
+  @media (max-width: 720px) { .exp-rules { grid-template-columns: 1fr; } }
+  .exp-rule {
+    background: white;
+    padding: 20px 24px;
+    border: 1px solid var(--line);
+  }
+  .exp-rule strong {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--blue);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .exp-rule p {
+    font-size: 14px;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* ============ CHECKLIST ============ */
+  .checklist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+  @media (max-width: 720px) { .checklist { grid-template-columns: 1fr; } }
+  .check-block h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+    color: var(--blue);
+    border-bottom: 2px solid var(--blue);
+    padding-bottom: 10px;
+  }
+  .check-block ul { list-style: none; }
+  .check-block li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+    line-height: 1.55;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .check-block li:last-child { border-bottom: none; }
+  .check-block li::before {
+    content: "□";
+    color: var(--blue);
+    font-size: 20px;
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+
+  /* ============ FECHAMENTO ============ */
+  .closing {
+    background: var(--blue);
+    color: white;
+    padding: 80px 56px;
+  }
+  .closing h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1;
+    letter-spacing: -0.005em;
+    max-width: 16ch;
+    margin-bottom: 28px;
+  }
+  .closing h3 .ital {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+  }
+  .closing p {
+    font-size: 18px;
+    line-height: 1.55;
+    max-width: 600px;
+    opacity: 0.92;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--ink);
+    color: white;
+    padding: 64px 0 40px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+  @media (max-width: 720px) { .footer-grid { grid-template-columns: 1fr; gap: 24px; } }
+  .footer-grid strong {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.15em;
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .footer-grid p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.9);
+  }
+  .signature {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-end;
+  }
+  .sig-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.04em;
+    color: white;
+    line-height: 1;
+  }
+  .sig-role {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 8px;
+    max-width: 480px;
+    line-height: 1.5;
+  }
+  .sig-role .ital {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--blue-bright);
+  }
+  .copyright {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.15em;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ MENU ============ -->
+<div class="menu">
+  <div class="container menu-inner">
+    <span class="menu-mark">ESTÚDIO BRUNO TOMÉ <span class="ital">·</span> MANUAL DE VENDA</span>
+    <nav class="menu-nav">
+      <a href="#perfis">01 Perfis</a>
+      <a href="#concorrencia">02 Concorrência</a>
+      <a href="#cartas">03 Cartas</a>
+      <a href="#roteiro">04 Roteiro</a>
+      <a href="#objecoes">05 Objeções</a>
+      <a href="#familia">06 Família</a>
+      <a href="#experimental">07 Experimental</a>
+      <a href="#follow-up">08 Follow-up</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container">
+    <span class="hero-tag">MANUAL DE VENDA · BLUEFIT PORTAL DO MORUMBI</span>
+    <h1>
+      A venda <span class="blue">acontece</span><br>
+      em <span class="ital">90 segundos.</span>
+    </h1>
+    <p class="hero-lede">
+      Lê antes do plantão, revisa entre um lead e outro. Tudo aqui já foi testado e funciona. <strong>Quem segue, fecha. Quem improvisa, perde lead pra Smart Fit que tá a 70 metros daqui.</strong>
+    </p>
+
+    <div class="hero-rules">
+      <div class="rule">
+        <span class="num">REGRA 01</span>
+        <div class="text">Lead que sai sem fechar volta em 48h ou nunca volta. Faz o follow-up.</div>
+      </div>
+      <div class="rule">
+        <span class="num">REGRA 02</span>
+        <div class="text">Visita guiada de 4 minutos converte mais que apresentação de plano.</div>
+      </div>
+      <div class="rule">
+        <span class="num">REGRA 03</span>
+        <div class="text">Sempre venda o plano top primeiro. O básico negocia sozinho.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 · PERFIS ============ -->
+<section id="perfis">
+  <div class="container">
+    <span class="section-num">01 . QUEM ENTRA NA SUA PORTA</span>
+    <h2 class="section-title">Três tipos de <span class="ital">lead.</span></h2>
+    <p class="section-lede">
+      Em 5 segundos de conversa você precisa saber qual dos três é. O discurso muda. Quem trata todo lead igual fecha menos.
+    </p>
+
+    <div class="leads">
+      <div class="lead-card">
+        <span class="badge">PERFIL 01</span>
+        <h3>Primeiro plano</h3>
+        <div class="signs">
+          <strong>SINAIS</strong>
+          Nunca pisou em academia, ou pisou há muitos anos. Pergunta como começa, o que precisa fazer. Olha pros aparelhos sem reconhecer.
+        </div>
+        <div class="signs">
+          <strong>O QUE QUER</strong>
+          Segurança. Não quer se sentir burro. Quer saber que vai ter alguém pra ajudar.
+        </div>
+        <div class="play">
+          <strong>JOGADA</strong>
+          Foca no professor de sala, no acompanhamento da primeira semana, na avaliação física. Vende o serviço, não a estrutura.
+        </div>
+      </div>
+
+      <div class="lead-card">
+        <span class="badge">PERFIL 02</span>
+        <h3>Tá voltando</h3>
+        <div class="signs">
+          <strong>SINAIS</strong>
+          Já frequentou academia. Conhece os aparelhos. Pergunta se tem cross, se tem aula tal. Compara com a antiga.
+        </div>
+        <div class="signs">
+          <strong>O QUE QUER</strong>
+          Não quer ser tratado como iniciante. Quer estrutura, horário, conveniência.
+        </div>
+        <div class="play">
+          <strong>JOGADA</strong>
+          Foca em horário 24h, variedade de aula, multiunidade. Mostra que respeita a experiência dele. Não explica o que ele já sabe.
+        </div>
+      </div>
+
+      <div class="lead-card">
+        <span class="badge">PERFIL 03</span>
+        <h3>Usuário Wellhub</h3>
+        <div class="signs">
+          <strong>SINAIS</strong>
+          Pergunta direto sobre Wellhub. Já fez check-in em outras academias. Tem a regra do plano dele na ponta da língua.
+        </div>
+        <div class="signs">
+          <strong>O QUE QUER</strong>
+          Que você não trate ele como aluno de segunda categoria. Quer informação clara sobre regra de acesso.
+        </div>
+        <div class="play">
+          <strong>JOGADA</strong>
+          Atende com o mesmo cuidado do aluno direto. Aluno Wellhub feliz vira aluno direto em 6 meses se a unidade for boa.
+        </div>
+      </div>
+    </div>
+
+    <div class="section-signature">
+      <span>MANUAL DE VENDA · 01 PERFIS</span>
+      <span class="ital">Estúdio Bruno Tomé</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 · CONCORRÊNCIA ============ -->
+<section id="concorrencia">
+  <div class="container">
+    <span class="section-num">02 . A REGRA DOS 3 MINUTOS</span>
+    <h2 class="section-title">A briga <span class="ital">na rua.</span></h2>
+    <p class="section-lede">
+      Quem entra aqui tá comparando até quatro academias. Você precisa saber o que cada uma representa pro lead. O argumento de venda muda dependendo de qual ele tá comparando.
+    </p>
+
+    <div class="compete-table">
+      <div class="compete-row head">
+        <div class="compete-cell">ACADEMIA</div>
+        <div class="compete-cell">PREÇO</div>
+        <div class="compete-cell">NOTA</div>
+        <div class="compete-cell">O QUE REPRESENTA PRO LEAD</div>
+      </div>
+      <div class="compete-row">
+        <div class="compete-cell">
+          <div class="name">Bio Ritmo</div>
+          <div style="font-size: 12px; color: var(--muted);">Morumbi Town · 1,2km</div>
+        </div>
+        <div class="compete-cell">A partir de R$ 250</div>
+        <div class="compete-cell">★★★★☆ 4,5</div>
+        <div class="compete-cell">Premium de verdade. Quem quer status. <strong>Quem acha caro vem pra cá.</strong></div>
+      </div>
+      <div class="compete-row">
+        <div class="compete-cell">
+          <div class="name">Smart Fit</div>
+          <div style="font-size: 12px; color: var(--muted);">~70m daqui</div>
+        </div>
+        <div class="compete-cell">A partir de R$ 110</div>
+        <div class="compete-cell">★★★★☆</div>
+        <div class="compete-cell">Volume, fila no horário de pico. <strong>Vence quem só olha preço.</strong></div>
+      </div>
+      <div class="compete-row">
+        <div class="compete-cell">
+          <div class="name">Target Fit</div>
+          <div style="font-size: 12px; color: var(--muted);">Próximo</div>
+        </div>
+        <div class="compete-cell">R$ 20-40 (anual)</div>
+        <div class="compete-cell">★★☆☆☆ 2,8</div>
+        <div class="compete-cell">Galpão, infra mínima. <strong>Não é concorrente, é argumento.</strong></div>
+      </div>
+      <div class="compete-row us">
+        <div class="compete-cell">
+          <div class="name">Bluefit (você)</div>
+          <div style="font-size: 12px; color: var(--muted);">Aqui</div>
+        </div>
+        <div class="compete-cell">R$ 90-160</div>
+        <div class="compete-cell">★★★★☆ 4,69</div>
+        <div class="compete-cell">Premium acessível. Estrutura, aula, professor de olho. Custa metade da Bio.</div>
+      </div>
+    </div>
+
+    <p class="table-caption">
+      <strong>Aluno que entra na Bluefit não discute preço — descobre o melhor jeito de pagar.</strong> Pergunta de promoção, primeiro mês com desconto, plano anual com desconto, indicação de amigo. O seu papel é saber TODAS as condições da unidade na ponta da língua antes de abrir a recepção.
+    </p>
+
+    <div class="section-signature">
+      <span>MANUAL DE VENDA · 02 CONCORRÊNCIA</span>
+      <span class="ital">Estúdio Bruno Tomé</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 · CARTAS ============ -->
+<section id="cartas">
+  <div class="container">
+    <span class="section-num">03 . AS CARTAS QUE VOCÊ SEMPRE TEM</span>
+    <h2 class="section-title">Argumentos <span class="ital">prontos.</span></h2>
+    <p class="section-lede">
+      Esses argumentos resolvem a maioria das negociações. Decora, ensaia, usa em ordem dependendo do lead que entrou.
+    </p>
+
+    <div class="cards-list">
+      <div class="card-item">
+        <div class="card-num">01</div>
+        <h3>O argumento do que você ganha</h3>
+        <p>Aluno que entra na Bluefit já fez a conta de preço lá fora. Ele quer ouvir o que tem AQUI. Foca em três coisas que diferenciam: estrutura, professor de sala, horário 24h.</p>
+        <blockquote>"Aqui você tem todo o equipamento profissional, professor na sala de musculação pra te corrigir, mais de 30 modalidades de aula, e treina 24h sem fila. É o que faz você ficar."</blockquote>
+      </div>
+
+      <div class="card-item">
+        <div class="card-num">02</div>
+        <h3>"Quem indica amigo é"</h3>
+        <p>Campanha oficial Bluefit nacional: 70% de desconto na próxima mensalidade pra quem indica + 70% de desconto na primeira pra quem entra. Plano Gold Pro. Use sempre que aparecer mais de uma pessoa, ou quando o lead vier acompanhado.</p>
+        <blockquote>"A gente tem uma campanha nacional que é 'Quem indica amigo é'. Você indica alguém, vocês dois ganham 70% de desconto. Cônjuge conta, vizinho conta. Se você quiser entrar com alguém, fica metade do preço pros dois no primeiro mês."</blockquote>
+      </div>
+
+      <div class="card-item">
+        <div class="card-num">03</div>
+        <h3>O argumento Bio Ritmo</h3>
+        <p>Quando aparecer alguém comparando com a Bio do Morumbi Town. Dado real: Bluefit tem nota mais alta no Wellhub que a Bio Ritmo Morumbi Town. <strong>Pagando menos da metade.</strong></p>
+        <blockquote>"Bio Ritmo é boa, sem dúvida. Mas custa R$250 pra cima. Aqui você paga R$120 e tem o mesmo aluno-tipo, equipamento profissional, aula coletiva. Quem treina aqui descobriu que não precisa pagar duzentos a mais pra ter conforto."</blockquote>
+      </div>
+
+      <div class="card-item">
+        <div class="card-num">04</div>
+        <h3>O argumento Target Fit</h3>
+        <p>Quando aparecer alguém dizendo "tem ali na esquina por R$20", você tem essa resposta pronta. <strong>Target Fit é seu melhor amigo.</strong></p>
+        <blockquote>"Tem sim. Já foi lá? Se foi, sabe o que tô falando. R$20 vira R$40 quando você precisa de personal porque ninguém te corrige na máquina, e vira R$60 quando você desiste em três meses porque tá quebrado."</blockquote>
+      </div>
+
+      <div class="card-item">
+        <div class="card-num">05</div>
+        <h3>A visita guiada de 4 minutos</h3>
+        <p>Não é tour de academia. É demonstração de pertencimento. Mostra musculação, sala de aula, vestiário. Aponta pro professor pelo nome. <strong>Quem termina o tour já se imagina aluno.</strong></p>
+        <blockquote>"Vou te mostrar em 4 minutos. Bora começar pela sala de musculação. Aquele é o Léo, faz funcional terça e quinta."</blockquote>
+      </div>
+
+      <div class="card-item">
+        <div class="card-num">06</div>
+        <h3>Fechamento por região</h3>
+        <p>Mora aqui no prédio? Trabalha aqui perto? <strong>Transforma o "mora aqui" em vantagem.</strong> As pessoas adoram pertencer.</p>
+        <blockquote>"Você mora no Edifício X? Tenho vários alunos aí. Treinam de manhã antes do trabalho. Quer que eu te apresente alguém quando vier fazer o experimental?"</blockquote>
+      </div>
+    </div>
+
+    <div class="section-signature">
+      <span>MANUAL DE VENDA · 03 CARTAS</span>
+      <span class="ital">Estúdio Bruno Tomé</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 · ROTEIRO ============ -->
+<section id="roteiro">
+  <div class="container">
+    <span class="section-num">04 . ROTEIRO DE 90 SEGUNDOS</span>
+    <h2 class="section-title">O passo a passo da <span class="ital">abordagem.</span></h2>
+    <p class="section-lede">
+      Cinco passos. Ensaia até virar natural. O lead não pode sentir que tá num roteiro. Você precisa estar.
+    </p>
+
+    <div class="script">
+      <div class="script-step">
+        <div class="step-num">01</div>
+        <div>
+          <h4>Cumprimento + filtro</h4>
+          <p>Não pergunta se pode ajudar. Faz uma pergunta que já te dá informação.</p>
+          <div class="say">
+            <strong>FALA</strong>
+            "Bom dia. Você já treinou em academia ou tá voltando agora?"
+          </div>
+        </div>
+      </div>
+
+      <div class="script-step">
+        <div class="step-num">02</div>
+        <div>
+          <h4>Identifica o perfil em 5 segundos</h4>
+          <p>Pela resposta, você já sabe se é primeiro plano, retorno ou Wellhub. Ajusta o tom na hora.</p>
+          <div class="say">
+            <strong>RECEBE</strong>
+            "Já treinei, parei há 2 anos." → perfil <em>retorno</em>. Foca em estrutura e horário.<br><br>
+            "Nunca treinei direito." → <em>primeiro plano</em>. Foca em professor e segurança.<br><br>
+            "Tô olhando pelo Wellhub." → <em>Wellhub</em>. Atende como aluno direto. Vai converter.
+          </div>
+        </div>
+      </div>
+
+      <div class="script-step">
+        <div class="step-num">03</div>
+        <div>
+          <h4>Visita guiada de 4 minutos</h4>
+          <p>Termina na recepção. Aponta pro professor pelo nome. Mostra um aluno treinando se possível. Cria atmosfera de comunidade.</p>
+          <div class="say">
+            <strong>FALA NO TOUR</strong>
+            "Aqui é a musculação. Aquele é o Léo, faz funcional terça e quinta. A sala de aula tá bem ali, tem 30 modalidades. Vestiário aqui. Bebedouro de água gelada."
+          </div>
+        </div>
+      </div>
+
+      <div class="script-step">
+        <div class="step-num">04</div>
+        <div>
+          <h4>Plano em UMA frase + condição vigente</h4>
+          <p>Não passa o cardápio. Vende o plano top primeiro, em uma frase. Inclui a condição/promoção da semana se houver.</p>
+          <div class="say">
+            <strong>FALA</strong>
+            "O plano que mais sai é o Gold Pro a R$X por mês. Essa semana tá com 70% off no primeiro mês. Você tem 31 dias pra cancelar sem multa."
+          </div>
+        </div>
+      </div>
+
+      <div class="script-step">
+        <div class="step-num">05</div>
+        <div>
+          <h4>Próximo passo concreto</h4>
+          <p>Não termina com "pensa aí e me dá um retorno". Termina com uma pergunta que pede decisão pequena.</p>
+          <div class="say">
+            <strong>FALA</strong>
+            "Quer fechar agora e treinar hoje à noite? Demora 5 minutos."<br><br>
+            <em>Se ele disser não:</em> "Beleza. Posso te mandar tudo no WhatsApp pra você ver com calma? Em qual número?"
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-signature">
+      <span>MANUAL DE VENDA · 04 ROTEIRO</span>
+      <span class="ital">Estúdio Bruno Tomé</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 · OBJEÇÕES ============ -->
+<section id="objecoes">
+  <div class="container">
+    <span class="section-num">05 . OBJEÇÕES E RESPOSTAS</span>
+    <h2 class="section-title">As que <span class="ital">sempre aparecem.</span></h2>
+    <p class="section-lede">
+      Decora a resposta dessas. Toda vez que aparecer, você responde sem pensar.
+    </p>
+
+    <div class="obj-list">
+      <div class="obj">
+        <div class="left">
+          <h4>OBJEÇÃO 01</h4>
+          <div class="quote">"Tem promoção?"</div>
+        </div>
+        <div class="right">
+          <h4>RESPOSTA</h4>
+          <div class="response">
+            "Sim, tem. Essa semana o plano Gold Pro tá com 70% off no primeiro mês — fica R$X em vez de R$Y. Se você indicar alguém, os dois ganham 70% off. <strong>E se você fechar o anual, libera taxa de matrícula.</strong> Qual dessas serve melhor pra você?"
+          </div>
+          <div class="why">
+            <strong>POR QUE FUNCIONA</strong>
+            Lead que pergunta de promoção tá interessado. Você dá três opções na mesma frase e pede pra ele escolher. Tira ele do modo "vou pensar" e coloca em "qual eu prefiro".
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="left">
+          <h4>OBJEÇÃO 02</h4>
+          <div class="quote">"Tem primeiro mês grátis?"</div>
+        </div>
+        <div class="right">
+          <h4>RESPOSTA</h4>
+          <div class="response">
+            "Hoje tô com 70% de desconto no primeiro mês, que é o equivalente a quase um mês grátis no plano Gold Pro. <strong>O grátis grátis não rola, mas a R$X você experimenta um mês inteiro.</strong> E se em 31 dias você quiser cancelar, sai sem multa."
+          </div>
+          <div class="why">
+            <strong>POR QUE FUNCIONA</strong>
+            Lead que pede grátis tá em modo "teste sem risco". Você não nega. Reposiciona pra "barato com segurança". O período de cancelamento sem multa é o que tira a ansiedade.
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="left">
+          <h4>OBJEÇÃO 03</h4>
+          <div class="quote">"Vou pensar."</div>
+        </div>
+        <div class="right">
+          <h4>RESPOSTA</h4>
+          <div class="response">
+            "Tranquilo. Pensa o que? Se for sobre o plano, eu te ajudo agora. Se for sobre se vai ter tempo de treinar, isso só descobre na primeira semana. <strong>Por isso a gente tem 31 dias pra cancelar sem multa. Bora deixar você matriculado e fazer um teste de uma semana?</strong>"
+          </div>
+          <div class="why">
+            <strong>POR QUE FUNCIONA</strong>
+            "Vou pensar" é cortina. Você descortina perguntando o que exatamente. Em 80% dos casos, é dúvida específica que dá pra resolver na hora.
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="left">
+          <h4>OBJEÇÃO 04</h4>
+          <div class="quote">"Tem ali na esquina por R$20."</div>
+        </div>
+        <div class="right">
+          <h4>RESPOSTA</h4>
+          <div class="response">
+            "Tem sim. Já foi lá? Se foi, sabe do que tô falando. <strong>R$20 vira R$40 quando você precisa de personal porque ninguém te corrige na máquina, e vira R$60 quando você desiste em três meses</strong> porque tá quebrado e suado de gente. Aqui você paga uma vez e tem o pacote completo."
+          </div>
+          <div class="why">
+            <strong>POR QUE FUNCIONA</strong>
+            Você não desmerece a Target. Reconhece, e expõe o custo real. Lead se sente respeitado, não pressionado.
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="left">
+          <h4>OBJEÇÃO 05</h4>
+          <div class="quote">"Vou começar mês que vem."</div>
+        </div>
+        <div class="right">
+          <h4>RESPOSTA</h4>
+          <div class="response">
+            "Por que mês que vem? <strong>Vai dar mais tempo o quê?</strong> Se você começar hoje, mês que vem você já tem 4 semanas de adaptação. Se esperar mês que vem, vai começar do zero. E provavelmente vai adiar de novo."
+          </div>
+          <div class="why">
+            <strong>POR QUE FUNCIONA</strong>
+            "Mês que vem" é procrastinação. Você nomeia isso sem ofender. Pergunta o que vai mudar. Quase nunca tem resposta.
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <div class="left">
+          <h4>OBJEÇÃO 06</h4>
+          <div class="quote">"Já fui aluno e cancelei."</div>
+        </div>
+        <div class="right">
+          <h4>RESPOSTA</h4>
+          <div class="response">
+            "Posso saber por que cancelou? Foi falta de tempo, foi alguma coisa que aconteceu aqui, foi preço? <strong>Sem rodeio.</strong> Se foi alguma coisa que aconteceu aqui, eu quero entender pra resolver. E pra te garantir que não vai acontecer de novo."
+          </div>
+          <div class="why">
+            <strong>POR QUE FUNCIONA</strong>
+            Aluno antigo voltando é gold. Não tenta reconquistar antes de entender o problema. Pergunta direto, sem defensiva.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-signature">
+      <span>MANUAL DE VENDA · 05 OBJEÇÕES</span>
+      <span class="ital">Estúdio Bruno Tomé</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 · FAMÍLIA ============ -->
+<section id="familia">
+  <div class="container">
+    <span class="section-num">06 . QUEM INDICA AMIGO É</span>
+    <h2 class="section-title">A matrícula <span class="ital">dupla.</span></h2>
+    <p class="section-lede">
+      Vila Andrade é bairro vertical com famílias adultas e adolescentes. A Bluefit nacional tem campanha oficial pra isso. Você não pode deixar passar.
+    </p>
+
+    <div class="pf-block">
+      <h3>"Quem indica amigo é" <span class="ital">na prática</span></h3>
+      <p class="lede">
+        Campanha oficial Bluefit, plano Gold Pro: <strong>quem indica ganha 70% de desconto na próxima mensalidade. Quem é indicado ganha 70% de desconto na primeira.</strong> Ambos pagam metade, ambos treinam. Vale pra cônjuge, filho adulto, pai, vizinho, amigo do trabalho. Bairro vertical familiar é o terreno perfeito.
+      </p>
+
+      <div class="pf-grid">
+        <div class="pf-item">
+          <h4>QUANDO USAR</h4>
+          <p>Sempre que entrar lead acompanhado. Sempre que o lead mencionar família, parceiro, irmão, amigo. Sempre que o lead disser "tô tentando dar exemplo em casa". Mulher 35-50 anos é alvo preferencial — quase sempre tem alguém pra trazer junto.</p>
+        </div>
+
+        <div class="pf-item">
+          <h4>O QUE FALAR</h4>
+          <p>Apresenta como vantagem que ele já tem antes mesmo de pedir.</p>
+          <div class="say">
+            "A gente tem uma campanha que é 'Quem indica amigo é'. Você matricula alguém junto, vocês dois pagam 30% no primeiro mês. Cônjuge, filho, vizinho, amigo. Quer trazer alguém? Eu já reservo o desconto pra vocês dois agora."
+          </div>
+        </div>
+
+        <div class="pf-item">
+          <h4>O ARGUMENTO DO ADOLESCENTE</h4>
+          <p>Pais ficam preocupados com filho na musculação. Você precisa estar pronto pra responder.</p>
+          <div class="say">
+            "Adolescente acima de 14 anos pode treinar com autorização do responsável. A musculação aqui tem professor de sala — o Léo, a Carol — que orientam carga adequada. Não é treino de adulto reduzido. Tem método."
+          </div>
+        </div>
+
+        <div class="pf-item">
+          <h4>O ARGUMENTO EMOCIONAL</h4>
+          <p>Esse é o que fecha. Não força, mas planta.</p>
+          <div class="say">
+            "Olha, eu sou suspeito pra falar, mas treinar com alguém de casa é uma coisa diferente. Vocês criam rotina junto, viram parceria. Quantas coisas a gente faz junto com o cônjuge ou com filho adolescente hoje?"
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-signature">
+      <span>MANUAL DE VENDA · 06 INDICAÇÃO</span>
+      <span class="ital">Estúdio Bruno Tomé</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 · EXPERIMENTAL ============ -->
+<section id="experimental">
+  <div class="container">
+    <span class="section-num">07 . AULA EXPERIMENTAL</span>
+    <h2 class="section-title">Quando <span class="ital">oferecer.</span></h2>
+    <p class="section-lede">
+      Aula experimental é arma poderosa, mas só pra lead quente. Oferecer pra todo mundo enche a unidade de visitante e tira vaga de aluno pagante. A regra é simples e barata.
+    </p>
+
+    <div class="exp-block">
+      <h3>A regra do experimental</h3>
+      <p>
+        Oferece aula experimental APENAS quando o lead já demonstrou intenção de compra mas tá inseguro com algum detalhe específico (modalidade, horário, sentir o clima). <strong>Não oferece pra lead que entrou pra "dar uma olhada".</strong> Esse vai pro tour de 4 minutos e pra apresentação do plano.
+      </p>
+
+      <p>
+        Pra controlar volume, defina <strong>1 horário fixo por dia pra aulas experimentais</strong> (sugestão: meia-hora antes da aula coletiva mais movimentada da unidade). Lead chega antes, faz a aula, e cai dentro do clima da galera. Se converter em matrícula no mesmo dia, joga no plano top com a condição da semana.
+      </p>
+
+      <div class="exp-rules">
+        <div class="exp-rule">
+          <strong>OFERECE QUANDO</strong>
+          <p>O lead disse "vou pensar" mas perguntou sobre a aula coletiva. Quando ele já voltou uma segunda vez. Quando demonstrou interesse mas tá em dúvida entre você e Smart Fit.</p>
+        </div>
+
+        <div class="exp-rule">
+          <strong>NÃO OFERECE QUANDO</strong>
+          <p>Lead entrou perguntando preço primeiro. Lead Wellhub que já tem acesso. Lead que tá comparando "só pra saber". Esses não viraram aluno via experimental.</p>
+        </div>
+
+        <div class="exp-rule">
+          <strong>HORÁRIO ÚNICO</strong>
+          <p>Defina um horário fixo por dia pra experimentais. Concentra o agendamento, evita lead vagando pela unidade fora de hora, e cria escassez.</p>
+        </div>
+
+        <div class="exp-rule">
+          <strong>FECHA NO MESMO DIA</strong>
+          <p>Quem entra no experimental sai matriculado em 70%+ dos casos se a abordagem for boa. Marca já o fechamento pra logo depois da aula.</p>
+        </div>
+      </div>
+
+      <p style="margin-top: 24px; font-size: 14px; color: var(--muted); font-style: italic;">
+        Se a unidade ainda não tem política oficial de aula experimental, isso é a primeira coisa a alinhar com a gerência. Sem regra, vira bagunça e a venda não acontece. Com regra, vira ferramenta de fechamento.
+      </p>
+    </div>
+
+    <div class="section-signature">
+      <span>MANUAL DE VENDA · 07 EXPERIMENTAL</span>
+      <span class="ital">Estúdio Bruno Tomé</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 · FOLLOW-UP ============ -->
+<section id="follow-up">
+  <div class="container">
+    <span class="section-num">08 . FOLLOW-UP</span>
+    <h2 class="section-title">O que mandar <span class="ital">depois.</span></h2>
+    <p class="section-lede">
+      Lead que sai sem fechar volta em 48h ou nunca volta. Follow-up bem feito é metade da conversão da unidade.
+    </p>
+
+    <div class="followup">
+      <div class="fu-card">
+        <span class="when">EM 4 HORAS</span>
+        <h4>Mensagem inicial</h4>
+        <div class="channel">WHATSAPP</div>
+        <div class="msg">
+          "Oi [nome], aqui é o [seu nome] da Bluefit Portal do Morumbi. Foi bom te conhecer hoje. Como combinamos, te mando aqui o link do plano que conversamos: [link]. Se quiser, eu fecho aqui pra você direto e você já treina hoje. Qualquer dúvida, tô aqui."
+        </div>
+      </div>
+
+      <div class="fu-card">
+        <span class="when">EM 48 HORAS</span>
+        <h4>Reforço com benefício</h4>
+        <div class="channel">WHATSAPP</div>
+        <div class="msg">
+          "Oi [nome], passando pra ver se você tinha alguma dúvida sobre o plano. A condição de 70% off no primeiro mês vale até [data]. Se quiser, eu garanto a sua hoje e a gente combina o seu primeiro treino."
+        </div>
+      </div>
+
+      <div class="fu-card">
+        <span class="when">EM 7 DIAS</span>
+        <h4>Última tentativa, sem pressão</h4>
+        <div class="channel">WHATSAPP</div>
+        <div class="msg">
+          "Oi [nome], última mensagem aqui pra não te encher. Se rolou de fechar com outra academia, tudo certo, sem stress. Se ainda tá pensando, fica meu contato pra qualquer coisa. Boa semana e bons treinos onde for."
+        </div>
+      </div>
+    </div>
+
+    <p class="table-caption" style="margin-top: 32px;">
+      <strong>Dica de ouro:</strong> a terceira mensagem (sem pressão, "boa sorte onde for") fecha mais que a primeira. As pessoas se sentem respeitadas e voltam justamente porque você não foi chato.
+    </p>
+
+    <div class="section-signature">
+      <span>MANUAL DE VENDA · 08 FOLLOW-UP</span>
+      <span class="ital">Estúdio Bruno Tomé</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09 · CHECKLIST ============ -->
+<section id="checklist">
+  <div class="container">
+    <span class="section-num">09 . CHECKLIST DO PLANTÃO</span>
+    <h2 class="section-title">Pré e pós <span class="ital">cada turno.</span></h2>
+    <p class="section-lede">
+      O que fazer antes de abrir e antes de sair. Quem segue, vende mais. Não precisa de talento. Precisa de método.
+    </p>
+
+    <div class="checklist">
+      <div class="check-block">
+        <h4>ANTES DE ABRIR</h4>
+        <ul>
+          <li>Painel de leads do dia anterior. Quem ainda não respondeu o follow-up?</li>
+          <li>Promoções e condições da semana decoradas, na ponta da língua</li>
+          <li>Aulas coletivas de hoje (horário, professor, vagas)</li>
+          <li>Lista de aniversariantes da semana</li>
+          <li>Estoque de kits e brinde de matrícula</li>
+          <li>Limpeza visual da recepção: balcão livre, panfleto organizado, copo de água visível</li>
+          <li>Uniforme: batido, crachá visível, sorriso</li>
+        </ul>
+      </div>
+
+      <div class="check-block">
+        <h4>ANTES DE FECHAR</h4>
+        <ul>
+          <li>Mandar follow-up de 4h pra todo lead que entrou e não fechou</li>
+          <li>Atualizar planilha de visitas (CPF, perfil, plano oferecido, motivo do não-fechamento)</li>
+          <li>Anotar 1 aprendizado do dia: qual objeção apareceu mais, qual argumento funcionou melhor</li>
+          <li>Conferir agenda de aulas experimentais agendadas pra amanhã</li>
+          <li>Avisar gerente sobre lead frio que pode virar (ex: aluno antigo querendo voltar)</li>
+          <li>Olhar 1 review pública do dia e responder com tom de marca</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-signature">
+      <span>MANUAL DE VENDA · 09 CHECKLIST</span>
+      <span class="ital">Estúdio Bruno Tomé</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FECHAMENTO ============ -->
+<section style="padding: 0; border-bottom: none;">
+  <div class="container">
+    <div class="closing">
+      <h3>Quem segue, <span class="ital">fecha mais.</span></h3>
+      <p>
+        Não tem segredo, não tem talento mágico, não tem dom de vendedor. Tem método, repetição, cuidado com o lead. Esse manual é a régua. Usa até virar natural.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <strong>DOCUMENTO</strong>
+        <p>Manual de Venda · Bluefit Portal do Morumbi · 2026</p>
+      </div>
+      <div>
+        <strong>USO</strong>
+        <p>Material interno destinado à equipe de venda e recepção da unidade. Os argumentos, scripts e dados de concorrência aqui descritos são baseados em fontes públicas e devem ser ajustados conforme a política comercial vigente. Documento complementar ao Doc Estratégico 01/2026.</p>
+      </div>
+    </div>
+
+    <div class="signature">
+      <div>
+        <div class="sig-name">Estúdio Bruno Tomé</div>
+        <div class="sig-role">
+          Branding fitness e wellness <span class="ital">·</span> Estratégia de marca para quem entende que <span class="ital">marca não é decoração, é decisão.</span>
+        </div>
+      </div>
+      <div class="copyright">© 2026 ESTÚDIO BRUNO TOMÉ · TODOS OS DIREITOS RESERVADOS</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
